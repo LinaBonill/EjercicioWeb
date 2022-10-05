@@ -57,22 +57,7 @@ public class Control extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-         String n= request.getParameter("txt_nombres");
-        String a=request.getParameter("txt_apellidos");
-        response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>respuesta 1</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>El Mensaje ha sido enviado en nombre de: "+n+" "+a+"</h1>");
-            out.println("<h1>Esta es una respuesta desde el Servlet Control</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        
     }
 
     /**
@@ -86,7 +71,26 @@ public class Control extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        //processRequest(request, response);
+         String nombres= request.getParameter("txt_nombres");
+        String correo=request.getParameter("txt_email");
+        String telefono=request.getParameter("txt_telefono");
+        String contraseña=request.getParameter("txt_contraseña");
+        PersonaDTO persona=new PersonaDTO(nombres,telefono,correo,contraseña);
+        response.setContentType("text/html;charset=UTF-8");
+        try ( PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>respuesta 1</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>El Mensaje ha sido enviado en nombre de: "+persona.toString()+"</h1>");
+            out.println("<h1>Esta es una respuesta desde el Servlet Control</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
 
     /**

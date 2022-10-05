@@ -19,5 +19,6 @@ a:hover {text-decoration:none;}
 h1 {margin:20px 0 0 0; text-transform:uppercase; font-size:20px; font-weight:normal;}
 #text p {margin:10px 0;}
 #sidebar {float:left; width:270px; background:url(images/perfil.jpg) no-repeat 0 10px; padding:500px 50px 20px 50px; color:#775b30; font-size:70px;}
-
+form{ text-align: center; }
+ 
  

@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Ejercicio Web</title>
-        <link href="style.css" rel="stylesheet" type="text/css">
+        <link href="estilo.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <div id="container">
@@ -18,8 +18,8 @@
                 <div id="logo"><a href="#">Blog Personal</a></div>
                 <div id="menu">
                     <ul>
-                        <li><a href="#">Presentación</a></li>
-                        <li><a href="contacto.jsp">Contactame</a></li>
+                        <li><a href="index.jsp">Presentación</a></li>
+                        <li><a href="contacto.jsp">Ingresar a la plataforma</a></li>
                     </ul>
                 </div>
             </div>
