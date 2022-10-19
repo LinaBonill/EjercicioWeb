@@ -7,6 +7,7 @@ package com.mycompany.ejercicioweb;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -41,7 +42,11 @@ public class Control extends HttpServlet {
             out.println("<h1>Tu solicitud a sido enviada" + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
+            
         }
+        PersonaDAO dao=new PersonaDAO();
+        List<PersonaDTO> lista= dao.readAll();
+        //Hacer for para mostrar los datos
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
