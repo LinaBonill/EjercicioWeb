@@ -44,8 +44,7 @@ public class Control extends HttpServlet {
             out.println("</html>");
             
         }
-        PersonaDAO dao=new PersonaDAO();
-        List<PersonaDTO> lista= dao.readAll();
+        
         //Hacer for para mostrar los datos
     }
 
@@ -95,6 +94,11 @@ public class Control extends HttpServlet {
             out.println("<h1>Esta es una respuesta desde el Servlet Control</h1>");
             out.println("</body>");
             out.println("</html>");
+        }
+        PersonaDAO dao=new PersonaDAO();
+        List<PersonaDTO> lista= dao.readAll();
+        for(PersonaDTO i : lista){
+            System.out.println(i.toString());
         }
     }
 
