@@ -19,15 +19,16 @@ public class Conexion {
     private String BD;
     private String usuario;
     private String contra;
+    private static Conexion con;
 
-    public Conexion(Connection conectar, String BD, String usuario, String contra) {
+    private Conexion(Connection conectar, String BD, String usuario, String contra) {
         this.conectar = conectar;
         this.BD = BD;
         this.usuario = usuario;
         this.contra = contra;
     }
 
-    public Conexion() {
+    private Conexion() {
         this.conectar = null;
         this.BD = "bd_bonill";
         this.usuario = "postgres";
@@ -49,6 +50,12 @@ public class Conexion {
 
     public Connection getConexion() {
         return conectar;
+    }
+    public static Conexion getIntance(){
+        if(con==null){
+            con=new Conexion();
+        }
+        return con;
     }
 
 }
