@@ -38,9 +38,9 @@ public class Conexion {
     public void conectar() {
         try {
             Class.forName("org.postgresql.Driver");
-            this.BD = "jdbc:postgresql://127.0.0.1:5432/bd_bonill";
-            this.usuario = "postgres";
-            this.contra = "123456";
+            this.BD = "jdbc:postgresql://ec2-54-82-205-3.compute-1.amazonaws.com:5432/d9ckko62tq7h84";
+            this.usuario = "bfrtnxqaetsnlw";
+            this.contra = "31056034087535b0ce200bb914dd5c84ed58f3d05eb4cba932b5b31cd96edb0c";
             this.conectar = (Connection) DriverManager.getConnection(BD, usuario, contra);
         } catch (ClassNotFoundException | HeadlessException | SQLException e) {
 
