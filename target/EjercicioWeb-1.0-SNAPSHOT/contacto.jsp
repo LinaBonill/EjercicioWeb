@@ -10,57 +10,39 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cuestionario</title>
-        <link href="estilo.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+
     </head>
     <body>
-        <div id="container">
-            <div id="header">
-                <div id="logo"><a href="#">Blog Personal</a></div>
-                <div id="menu">
-                    <ul>
-                        <li><a href="index.jsp">Presentación</a></li>
-                    </ul>
-                </div>
+        
+        <h1>Sign up</h1>
+        <div class="contenedor">
+            <div class="logotipo">
+                <center>
+                    <image src="images/leon.png" width="15%"/>
+                </center>
             </div>
-            <div id="formulario">
-                 
-                <div id="contendor">
-                     <h1>Registro</h1>
-                <form action="Control" method="post">
-                    <div>
-                        <label>
-                            Nombres:
-                        </label>
-                        <input type="text" name="txt_nombres" required/>
-                    </div>
-                    <div>
-                        <label>
-                            Telefono:
-                        </label>
-                        <input type="text" name="txt_telefono" required/>
-                    </div>
-                    <div>
-                        <label>
-                            Correo:
-                        </label>
-                        <input type="email" name="txt_email" required/>
-                    </div>
-                    <div>
-                        <label>
-                            Contraseña:
-                        </label>
-                        <input type="password" name="txt_contraseña" required/>
-                    </div>
-                    <div id="registro">
-                    <input type="submit" name="btn_registrar" value="Registrar"/>
-                    <input type="reset" name="btn_borrar" value="Borrar"/>
-                    </div>
-                </form>
-                
+            <form action="Control" method="post">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" name="txt_usuario" placeholder="Names" required/>
+                <br>
+                <i class="fa-sharp fa-solid fa-mobile"></i>
+                <input type="text" name="txt_telefono" placeholder="Number" required/>
+                 <br>
+                 <i class="fa-solid fa-envelope"></i>
+                 <input type="email" name="txt_email" placeholder="example@gmail.com" required/>
+                 <br>
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" name="txt_contraseña" placeholder="Password" required/>
+                 <button>Register</button>
 
-                </div>
-               
-            </div>
+
+
+            </form>
+
+
+
         </div>
     </body>
 </html>
