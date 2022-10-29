@@ -7,7 +7,7 @@ package com.mycompany.ejercicioweb;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -36,15 +36,15 @@ public class Control extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Control</title>");   
+            out.println("<title>Servlet Control</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Tu solicitud a sido enviada" + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
-            
+
         }
-        
+
         //Hacer for para mostrar los datos
     }
 
@@ -61,7 +61,7 @@ public class Control extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-        
+
     }
 
     /**
@@ -76,30 +76,44 @@ public class Control extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-         String nombres= request.getParameter("txt_nombres");
-        String correo=request.getParameter("txt_email");
-        String telefono=request.getParameter("txt_telefono");
-        String contraseña=request.getParameter("txt_contraseña");
+        /*
         PersonaDTO persona=new PersonaDTO(nombres,telefono,correo,contraseña);
-        response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>respuesta 1</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>El Mensaje ha sido enviado en nombre de: "+persona.toString()+"</h1>");
-            out.println("<h1>Esta es una respuesta desde el Servlet Control</h1>");
-            out.println("</body>");
-            out.println("</html>");
+         */
+        PersonaDTO objpersona;
+        PersonaDAO dao = new PersonaDAO();
+        String accion = (String) request.getParameter("accion");
+
+        if (accion.equals("login")) {
+
+            String usuario = request.getParameter("txt_usuario");
+            String clave = request.getParameter("txt_password");
+
+            objpersona = dao.consultar(usuario, clave);
+
+            if (objpersona.getClave().equals(clave)) {
+                request.setAttribute("usuario", request.getParameter("txt_usuario"));
+                request.setAttribute("telefono", objpersona.getTelefono());
+                request.setAttribute("correo", objpersona.getCorreo());
+                request.setAttribute("contra", objpersona.getClave());
+                request.getRequestDispatcher("principal.jsp").forward(request, response);
+            }else {
+                request.setAttribute("registro", "Wrong names or password");
+                request.getRequestDispatcher("index.jsp").forward(request, response);
+            }
         }
-        PersonaDAO dao=new PersonaDAO();
-        List<PersonaDTO> lista= dao.readAll();
-        for(PersonaDTO i : lista){
-            System.out.println(i.toString());
+        if (accion.equals("registro")) {
+            //Registro exitoso
+            String nombres = request.getParameter("txt_nombres");
+            String correo = request.getParameter("txt_email");
+            String telefono = request.getParameter("txt_telefono");
+            String contraseña = request.getParameter("txt_contra");
+            objpersona = new PersonaDTO(nombres, telefono, correo, contraseña);
+            if (dao.insertar(objpersona)) {
+                request.setAttribute("exito", "Cuenta registrada con exito");
+                request.getRequestDispatcher("index.jsp").forward(request, response);
+            }
         }
+
     }
 
     /**

@@ -23,13 +23,19 @@
                     <li>
                         <a href="#">Cuenta</a>
                         <ul class="menu_vertical">
-                            <a href="#">Usuario</a>
+                            <a href="#">${usuario}</a>
                             <a href="index.jsp">Sing off</a>
                         </ul>
                     </li>
                 </ul>
             </nav>
         </header>
-        <p>Bienvenid@</p>
+        <p>Bienvenid@ ${usuario}</p>
+        <p>Estos son tus datos</p>
+        <p>Nombres:${usuario} </p>
+        <p>Telefono:${telefono} </p>
+        <p>Correo:${correo} </p>
+        <p>Clave:${contra} </p>
+
     </body>
 </html>

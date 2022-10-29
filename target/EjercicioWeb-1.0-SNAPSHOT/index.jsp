@@ -14,26 +14,32 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
+        
         <h1>Login</h1>
-
         <div class="contenedor">
             <div class="logotipo">
                 <center>
                     <image src="images/leon.png" width="15%"/>
+                    <br>
+                     <a>${registro}</a>
                 </center>
+               
             </div>
-            <form action="" method="post">
+            <form action="Control" method="post">
                 <i class="fa-solid fa-user"></i>
-                <input type="text" name="txt_nombres" placeholder="Names" required/>
+                <input type="text" name="txt_usuario" placeholder="Names" required/>
                 <br>
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" name="txt_contraseña" placeholder="Password" required/>
-                <button>Login</button>
+                <input type="password" name="txt_password" placeholder="Password" required/>
+                <button name="accion" value="login">Login</button>
             </form>
-            <a href="contacto.jsp">Sign up</a>
             
+            <a href="contacto.jsp">Sign up</a>
+
             <a class="olvido" href="#">Forgot pasword</a>
         </div> 
+       
+        
 
 
 

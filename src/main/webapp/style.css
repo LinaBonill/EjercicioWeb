@@ -29,8 +29,14 @@ p{
     font-size: 30px;
     font-family: fantasy;  
 }
-
-h1{
+h2{
+    text-align: center;
+    color: rgb(255,255,255);
+    font-size: 20px;
+    font-family: fantasy;
+    margin-bottom: 90px;
+}
+.confirmacion{
     text-align: center;
     padding-top: 20px;
     color: rgb(255,255,255);
