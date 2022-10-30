@@ -11,15 +11,20 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Ejercicio Web</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="estilo.css">
+        <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     </head>
     <body>
         
-        <h1>Login</h1>
+          
+       <h1>Login</h1>
+        
         <div class="contenedor">
             <div class="logotipo">
                 <center>
-                    <image src="images/leon.png" width="15%"/>
+                    
+                    <image class="logo" src="images/leon.png" />
+                    
                     <br>
                      <a>${registro}</a>
                 </center>
@@ -33,10 +38,12 @@
                 <input type="password" name="txt_password" placeholder="Password" required/>
                 <button name="accion" value="login">Login</button>
             </form>
-            
+                <center>
             <a href="contacto.jsp">Sign up</a>
+            <br>
 
-            <a class="olvido" href="#">Forgot pasword</a>
+            <a class="olvido" href="#">Forgot password</a>
+            </center>
         </div> 
        
         

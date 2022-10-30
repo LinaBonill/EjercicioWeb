@@ -1,5 +1,5 @@
 #surefire
-#Sat Oct 29 16:59:20 COT 2022
+#Sun Oct 30 07:13:02 COT 2022
 testClassesDirectory=C\:\\Users\\Pc\\Documents\\EjercicioWeb\\target\\test-classes
 classPathUrl.4=C\:\\Users\\Pc\\.m2\\repository\\javax\\javaee-web-api\\7.0\\javaee-web-api-7.0.jar
 forkMode=once
